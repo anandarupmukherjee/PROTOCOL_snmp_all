@@ -21,3 +21,22 @@ Any errors that occur during the sending of the trap are printed to the serial c
 
 
 <h1>3) SNMP DOCKERFILE</h1>
+Build the Docker image by running the following command in the terminal from the directory containing the Dockerfile and snmpd.conf file:
+
+<b>docker build -t snmp-manager .</b>
+
+This will create a Docker image called snmp-manager based on the Dockerfile and snmpd.conf file.
+
+
+Run the Docker container with the following command:
+
+<b>docker run --name snmp-manager -p 161:161/udp -d snmp-manager </b>
+
+This will start a Docker container called snmp-manager and map port 161 (the default SNMP port) to the host.
+
+That's it! You now have an SNMP manager running inside a Docker container on your Raspberry Pi. You can use SNMP agents on other devices to communicate with this manager by sending SNMP traps to the IP address of the Raspberry Pi on port 161.
+
+
+
+
+
